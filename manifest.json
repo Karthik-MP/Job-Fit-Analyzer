@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Job Fit Analyzer",
+    "version": "1.0",
+    "description": "Analyzes job descriptions for fit based on education and visa requirements",
+    "permissions": ["activeTab", "storage"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }]
+  }

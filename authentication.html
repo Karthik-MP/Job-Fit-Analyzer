@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication</title>
+  <style>
+    /* Add your styles here */
+  </style>
+</head>
+<body>
+
+  <!-- Authentication Forms Section -->
+  <div id="authForms">
+    <!-- Login Form -->
+    <div id="loginForm">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button id="loginButton">Login</button>
+      <p>Don't have an account? <span id="showSignup">Sign Up</span></p>
+      <div id="message"></div>
+    </div>
+
+    <!-- Signup Form 1 (Email, Password, Phone, Country) -->
+    <div id="signupForm1" class="hidden">
+      <h2>Sign Up (Part 1)</h2>
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <input type="text" id="signupPhoneNumber" placeholder="Phone Number" required>
+      <input type="text" id="signupCountry" placeholder="Country" required>
+      <button id="nextSignup">Next</button>
+      <div id="message"></div>
+    </div>
+
+    <!-- Signup Form 2 (Additional Info) -->
+    <div id="signupForm2" class="hidden">
+      <h2>Sign Up (Part 2)</h2>
+      <input type="text" id="major" placeholder="Major" required>
+      <input type="text" id="degree" placeholder="Degree" required>
+      <input type="text" id="university" placeholder="University" required>
+      <input type="date" id="startDate" placeholder="Start Date" required>
+      <input type="date" id="endDate" placeholder="End Date" required>
+      <select id="visaStatus" required>
+        <option value="">Visa Status</option>
+        <option value="F1">F1</option>
+        <option value="H1B">H1B</option>
+        <option value="Other">Other</option>
+      </select>
+      <button id="signupButton">Sign Up</button>
+      <div id="message"></div>
+    </div>
+  </div>
+
+  <script src="authentication.js"></script>
+</body>
+</html>

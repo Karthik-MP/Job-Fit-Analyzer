@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link  rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <style>
+        .result { margin-top: 15px; padding: 10px; border: 1px solid #ccc; }
+        .error { color: red; }
+        .success { color: green; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="container" style="width: 300px; padding: 10px;">
+  <div class="alert alert-danger hidden" role="alert" id="errorMessage">
+    Please fill out all fields before proceeding.
+  </div>
+  <div id="authForms">
+    <!-- Login Form -->
+    <div id="loginForm" style="margin: 10px 0;"  >
+      <h3 class="text-center">Login</h3>
+      <div class="mb-3">
+        <label for="loginEmail" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="loginPassword" class="col-sm-2 col-form-label">Password</label>
+        <input type="password" class="form-control" id="loginPassword">
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary" id="loginButton">Login</button>
+      </div>
+      <p class="mt-2">Don't have an account? <button class="btn btn-primary" id="showSignup">Sign up</button></p>
+    </div>
+
+    <!-- Signup Form (Page 1) -->
+    <div id="signupForm1" style="margin: 10px 0;" class="hidden">
+      <h3 class="text-center">Sign Up - Step 1</h3>
+      <label for="signupEmail" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com">
+      
+      <label for="signupPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" id="signupPassword">
+      
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number" pattern="[0-9]{10}" title="Phone number must be 10 digits">
+      
+      <label for="country" class="form-label">Country</label>
+      <select class="form-select" id="country">
+        <option value="us">United States</option>
+        <option value="canada">Canada</option>
+        <option value="india">India</option>
+        <option value="uk">United Kingdom</option>
+        <option value="australia">Australia</option>
+        <option value="other">Other</option>
+      </select>
+
+      <div class="text-center mt-2">
+        <button type="button" class="btn btn-primary" id="nextPage1">Next</button>
+      </div>
+    </div>
+
+    <!-- Signup Form (Page 2) -->
+    <div id="signupForm2" style="margin: 10px 0;" class="hidden">
+      <h3 class="text-center">Sign Up - Step 2</h3>
+      
+      <label for="degree" class="form-label">Degree</label>
+      <select class="form-select" id="degree">
+        <option value="bachelor">Bachelor's</option>
+        <option value="master">Master's</option>
+        <option value="phd">PhD</option>
+        <option value="diploma">Diploma</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="major" class="form-label">Major</label>
+      <input type="text" class="form-control" id="major" placeholder="major">
+      
+      
+      <label for="university" class="form-label">University/School</label>
+      <select class="form-select" id="university">
+        <option value="harvard">Harvard University</option>
+        <option value="mit">MIT</option>
+        <option value="stanford">Stanford University</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- Start Date Picker -->
+      <label for="startDate" class="form-label">Start Date</label>
+      <input type="date" class="form-control" id="startDate">
+    
+      <!-- End Date Picker -->
+      <label for="endDate" class="form-label">End Date</label>
+      <input type="date" class="form-control" id="endDate">
+      
+      <label for="visaStatus" class="form-label">Visa Status</label>
+      <select id="visaStatus" class="form-select">
+        <option value="citizen">Citizen/Permanent Resident</option>
+        <option value="h1b">H1B Visa</option>
+        <option value="f1">F1 Visa/OPT</option>
+        <option value="other">Other</option>
+      </select>
+
+      <div class="text-center mt-2">
+        <button type="button" class="btn btn-primary" id="previousPage2">Previous</button>
+        <button type="button" class="btn btn-primary" id="signupButton">Sign Up</button>
+      </div>
+      <p class="mt-2">Don't have an account? <button class="btn btn-primary" id="showLogin">Login</button></p>
+    </div>
+  </div>
+
+  <!-- Main App (hidden until authenticated) -->
+  <div id="mainApp" class="hidden">
+    <h3>Job Analyzer</h3>
+    <button class="btn btn-primary" id="analyze">Analyze Current Page</button>
+    <button id="logout">Logout</button>
+    <div id="result" class="result"></div>
+  </div>
+
+
+  <div id="message"></div>
+    <script src="popup.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
